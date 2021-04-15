@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{stackengine}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{tikz}
+%\usepackage{fontspec}
+
+%\setmainfont{Verdana}
+
+% Fonte
+\usepackage{arev}
+\usepackage[T1]{fontenc}
+
+%\renewcommand{\familydefault}{lmss}
+
+\geometry{
+    a4paper,
+    total={160mm,257mm},
+    left=25mm,
+    top=30mm,
+    headheight=15mm,
+    includeheadfoot,
+    voffset=-1in,
+    hoffset=0in
+}
+    
+\setlength{\columnsep}{1cm}
+\definecolor{BlueEd}{RGB}{0,0,102}
+ 
+% -- Início Cabeçalho
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ % -- Campo da esquerda
+    \begin{tabular}{@{}c@{}}
+        \includegraphics[height=15mm]{assets/logo.png}
+    \end{tabular}
+    \color{BlueEd}
+    \fontsize{10pt}{15}\selectfont
+    \begin{tabular}{l@{}l@{}}
+        \mbox{}\\
+        \multicolumn{1}{l|}{} & \quad \textbf{E-book didático}\\ 
+        \multicolumn{1}{l|}{} & \quad \textbf{Enem e Vestibular}\\
+        \mbox{}
+    \end{tabular}
+}
+\fancyhead[R]{  % -- Campo da direita
+    \begin{tabular}{@{}r@{}}
+        \color{BlueEd}\MakeUppercase{\textbf{Química}} \\
+        \textbf{Eletroquímica I} \\
+        Prof. Matheus Silva
+    \end{tabular}
+}
+% -- Início Rodapé
+\fancyfoot[L]{  % -- Campo da esquerda
+    \fontsize{10pt}{10}\selectfont Educursinho: Educação e aprovação | 2021
+}
+
+\fancyfoot[R]{  % -- Campo da direita
+    \fontsize{10pt}{10}\selectfont \thepage
+}
+
+% -- Fim cabeçalho e rodapé
+
+
+% Formatação
+\titleformat*{\section}{\color{BlueEd}\fontsize{18pt}{15}\centering\bfseries\sffamily\uppercase}
+\titleformat*{\subsection}{\large\bfseries\sffamily\uppercase}
+\titleformat*{\subsubsection}{\itshape\subsubsectionfont}
+
+    
+\begin{document}
+    \begin{multicols*}{2}
+        
+        \section*{eletroquímica I}
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
+        sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
+        consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui 
+        dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi 
+        tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, 
+        quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi 
+        consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae 
+        consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+        %\pagebreak
+        
+        \subsection*{Oxidação}
+        Vivamus et leo feugiat, malesuada ipsum commodo, imperdiet libero. Morbi finibus aliquam pellentesque. 
+        Vestibulum hendrerit in lectus a dictum. Nam in ultrices elit. Nulla vehicula felis at leo interdum 
+        venenatis. Aenean in velit non lacus luctus luctus. Mauris varius sem nec tortor ullamcorper dapibus. 
+        Maecenas commodo luctus nulla.
+        
+        Nam et felis nulla. Phasellus tincidunt nulla ut augue vestibulum molestie. Sed augue libero, rutrum 
+        at vehicula suscipit, viverra fermentum quam. Aliquam et pellentesque nulla. Interdum et malesuada 
+        fames ac ante ipsum primis in faucibus. In ornare metus velit, eu dapibus magna dictum vel. 
+        Vestibulum eleifend urna id imperdiet porta. Proin ac fermentum augue. Etiam feugiat risus eget 
+        convallis ultricies. Nam luctus enim sem, id auctor purus pharetra non. Nunc dignissim nibh a 
+        convallis mattis. Etiam molestie lorem quis justo vulputate vehicula. Proin pretium aliquet sodales. 
+        Integer maximus varius lectus ut rutrum.
+        
+        Nulla non nunc in risus fermentum suscipit. Cras congue ante leo, in tempor orci malesuada id. Morbi 
+        vestibulum tempus ornare. Praesent blandit porta maximus. Aliquam vel pretium augue. Quisque pharetra 
+        varius mauris, id consequat diam semper sed. Ut consectetur ipsum et lorem dapibus, sit amet tristique 
+        orci feugiat. Cras et velit turpis. Nam metus felis, cursus at leo eget, molestie placerat sem. Nullam 
+        vehicula dolor nec ipsum tempus, vitae consectetur nisl euismod. Nunc aliquet justo pretium efficitur 
+        scelerisque. Nunc ut libero eu neque interdum vulputate in vitae turpis. Orci varius natoque penatibus 
+        et magnis dis parturient montes, nascetur ridiculus mus. 
+    
+        %\pagebreak
+
+        \section{Eletroquímica II}
+
+        Quisque vehicula ex a rhoncus luctus. Cras efficitur venenatis augue convallis porta. Cras ligula odio, 
+        lacinia et ante non, tincidunt aliquam neque. Aenean urna mauris, faucibus a laoreet ac, elementum sit 
+        amet ex. Donec porttitor lorem non viverra lobortis. In et vestibulum erat. Nulla facilisi.
+         Pellentesque sit amet sagittis turpis. Maecenas in tincidunt risus. Integer laoreet semper justo quis 
+         porta. Proin imperdiet non tortor bibendum ultrices. Fusce diam felis, consectetur ac ultricies vitae, 
+         pellentesque ac quam. Praesent scelerisque rhoncus ipsum, quis dictum diam. Quisque sed aliquam mi.
+         Mauris accumsan facilisis orci, et semper lorem ultricies sed.
+
+        Sed at faucibus urna. Fusce eleifend fringilla urna sit amet cursus. Nullam elementum sapien quam, ac 
+        tempus lectus accumsan sed. Donec lacinia ipsum vel accumsan mattis. Nullam hendrerit dignissim bibendum.
+         Donec molestie ex sit amet massa imperdiet porta. Aliquam sed justo molestie, tincidunt dolor dignissim, 
+         auctor ex. Aenean a quam eget dui imperdiet pulvinar. Vivamus vulputate mattis pellentesque. Maecenas 
+         fermentum odio vel magna tristique vehicula malesuada ac justo. Duis suscipit malesuada quam, vitae 
+         dictum ligula vestibulum in. Pellentesque eu aliquet mi. Duis velit nulla, congue id elementum non, 
+         bibendum vel orci. Donec aliquet ac turpis eget luctus. Aenean mollis leo felis, id auctor diam rhoncus 
+         tempus. Quisque efficitur dui odio, vel volutpat diam imperdiet sit amet. 
+
+        \subsection{Oxirredução}
+        Vestibulum pharetra facilisis metus, eu dictum felis fringilla at. Duis placerat imperdiet blandit. Morbi 
+        at feugiat nulla, eget condimentum enim. Vestibulum eu turpis tortor. Curabitur pellentesque elit eu est 
+        elementum, non placerat enim volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+        Donec hendrerit risus diam. Vivamus eu imperdiet diam. Curabitur pellentesque aliquam tortor sed condimentum.
+
+        Mauris sodales est molestie mollis laoreet. Integer nec turpis dapibus, rhoncus tortor non, vestibulum 
+        lectus. Suspendisse potenti. Praesent pulvinar blandit lorem eget tempor. Aliquam fringilla enim et lectus 
+        sollicitudin, et semper lacus mattis. Nulla vel nisl libero. Nam bibendum sapien libero, sed interdum ipsum 
+        faucibus id. Maecenas non dolor tristique mauris venenatis tincidunt. Duis pulvinar, dui et tristique dictum, 
+        mauris lacus euismod elit, vel accumsan elit libero vitae nisi. Nam aliquet iaculis massa at volutpat.
+        
+        
+    \end{multicols*}
+    
+\end{document}
