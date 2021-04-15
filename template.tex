@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
+\usepackage{xparse}
 \usepackage{geometry}
 \usepackage{indentfirst}
 \usepackage{multicol}
@@ -11,15 +12,29 @@
 \usepackage{titlesec}
 \usepackage{xcolor}
 \usepackage{tikz}
-%\usepackage{fontspec}
 
-%\setmainfont{Verdana}
-
-% Fonte
+%--------------------------------- Fonte ----------------------------------
 \usepackage{arev}
 \usepackage[T1]{fontenc}
 
-%\renewcommand{\familydefault}{lmss}
+%------------------------------ Formatação --------------------------------
+\let\CLASSsection\section
+
+\RenewDocumentCommand{\section}{som}{%
+  \IfBooleanTF{#1}
+   {% there's a *
+    \CLASSsection*{#3}\markboth{#3}{}%
+   }
+   {% no *
+    \IfNoValueTF{#2}
+     {% no opt arg
+      \CLASSsection{#3}%
+     }
+     {% opt arg
+      \CLASSsection[#2]{#3}%
+     }%
+   }%
+}
 
 \geometry{
     a4paper,
@@ -35,9 +50,10 @@
 \setlength{\columnsep}{1cm}
 \definecolor{BlueEd}{RGB}{0,0,102}
  
-% -- Início Cabeçalho
+%------------------------------ Cabeçalho --------------------------------
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\ #1}{}}
 \fancyhf{}
 \fancyhead[L]{ % -- Campo da esquerda
     \begin{tabular}{@{}c@{}}
@@ -55,11 +71,12 @@
 \fancyhead[R]{  % -- Campo da direita
     \begin{tabular}{@{}r@{}}
         \color{BlueEd}\MakeUppercase{\textbf{Química}} \\
-        \textbf{Eletroquímica I} \\
+        \textbf{\leftmark} \\
+        \textbf{\rightmark}
         Prof. Matheus Silva
     \end{tabular}
 }
-% -- Início Rodapé
+%-------------------------------- Rodapé ----------------------------------
 \fancyfoot[L]{  % -- Campo da esquerda
     \fontsize{10pt}{10}\selectfont Educursinho: Educação e aprovação | 2021
 }
@@ -67,20 +84,21 @@
 \fancyfoot[R]{  % -- Campo da direita
     \fontsize{10pt}{10}\selectfont \thepage
 }
+%------------------------ Fim Rodapé e Cabeçalho --------------------------
 
-% -- Fim cabeçalho e rodapé
 
-
-% Formatação
+%------------------------------ Formatação --------------------------------
 \titleformat*{\section}{\color{BlueEd}\fontsize{18pt}{15}\centering\bfseries\sffamily\uppercase}
 \titleformat*{\subsection}{\large\bfseries\sffamily\uppercase}
 \titleformat*{\subsubsection}{\itshape\subsubsectionfont}
+\titlespacing{\subsection}{0mm}{8mm}{4mm}
 
-    
+
+%--------------------------- Inicio documento -----------------------------    
 \begin{document}
     \begin{multicols*}{2}
         
-        \section*{eletroquímica I}
+        \section*{Eletroquímica I}
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
         sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia 
@@ -116,7 +134,7 @@
     
         %\pagebreak
 
-        \section{Eletroquímica II}
+        \section*{Eletroquímica II}
 
         Quisque vehicula ex a rhoncus luctus. Cras efficitur venenatis augue convallis porta. Cras ligula odio, 
         lacinia et ante non, tincidunt aliquam neque. Aenean urna mauris, faucibus a laoreet ac, elementum sit 
@@ -128,14 +146,14 @@
 
         Sed at faucibus urna. Fusce eleifend fringilla urna sit amet cursus. Nullam elementum sapien quam, ac 
         tempus lectus accumsan sed. Donec lacinia ipsum vel accumsan mattis. Nullam hendrerit dignissim bibendum.
-         Donec molestie ex sit amet massa imperdiet porta. Aliquam sed justo molestie, tincidunt dolor dignissim, 
-         auctor ex. Aenean a quam eget dui imperdiet pulvinar. Vivamus vulputate mattis pellentesque. Maecenas 
-         fermentum odio vel magna tristique vehicula malesuada ac justo. Duis suscipit malesuada quam, vitae 
-         dictum ligula vestibulum in. Pellentesque eu aliquet mi. Duis velit nulla, congue id elementum non, 
-         bibendum vel orci. Donec aliquet ac turpis eget luctus. Aenean mollis leo felis, id auctor diam rhoncus 
-         tempus. Quisque efficitur dui odio, vel volutpat diam imperdiet sit amet. 
+        Donec molestie ex sit amet massa imperdiet porta. Aliquam sed justo molestie, tincidunt dolor dignissim, 
+        auctor ex. Aenean a quam eget dui imperdiet pulvinar. Vivamus vulputate mattis pellentesque. Maecenas 
+        fermentum odio vel magna tristique vehicula malesuada ac justo. Duis suscipit malesuada quam, vitae 
+        dictum ligula vestibulum in. Pellentesque eu aliquet mi. Duis velit nulla, congue id elementum non, 
+        bibendum vel orci. Donec aliquet ac turpis eget luctus. Aenean mollis leo felis, id auctor diam rhoncus 
+        tempus. Quisque efficitur dui odio, vel volutpat diam imperdiet sit amet. 
 
-        \subsection{Oxirredução}
+        \subsection*{Oxirredução}
         Vestibulum pharetra facilisis metus, eu dictum felis fringilla at. Duis placerat imperdiet blandit. Morbi 
         at feugiat nulla, eget condimentum enim. Vestibulum eu turpis tortor. Curabitur pellentesque elit eu est 
         elementum, non placerat enim volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
